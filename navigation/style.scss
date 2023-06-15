@@ -1,0 +1,62 @@
+@import "../styles/variables.scss";
+@import "../styles/main.scss";
+
+.header {
+  background-color: $primary-bg-color;
+  padding: 24px;
+
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+}
+
+.button {
+  display: block;
+  height: 42px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: $font-weight-redular;
+  font-size: $font-size-m;
+
+  border-radius: 4px;
+  color: $primary-font-color;
+
+  &__dropdown {
+    -moz-column-gap: 14px;
+         column-gap: 14px;
+  }
+
+  &__user-image {
+    border-radius: 50%;
+  }
+
+  &__icon path{
+    fill: $secondary-bg-color;
+  }
+
+  &--outlined {
+    border: 1px solid $secondary-bg-color;
+    color: $secondary-font-color;
+
+    &:hover {
+      background: $secondary-bg-color-hover;
+      color: $primary-font-color;
+    }
+  }
+
+  &--active {
+    background-color: $secondary-bg-color;
+    color: $primary-font-color;
+  }
+
+  &--active > &__icon path{
+    fill: $secondary-bg-color-active;
+  }
+}
