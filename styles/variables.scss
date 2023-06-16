@@ -1,8 +1,13 @@
 // ------- Main colors ------- //
-$primary-bg-color: #1F75CB;
-$secondary-bg-color: #FFFFFF;
+$primary-color: #1F75CB;
+$secondary-color: #FFFFFF;
+$disabled-color: #8E8E8E;
 $error-color: #EE4222;
+$bronze-color: #9E6955;
 $border-color: #00000026;
+
+$primary-bg-color: $primary-color;
+$secondary-bg-color: $secondary-color;
 
 // -------  Color states ------- //
 $primary-bg-color-hover: #1068BF;
@@ -14,17 +19,17 @@ $secondary-bg-color-active: #DCDCDE;
 
 $border-color-hover: #12131680;
 $border-color-active: #1C1C1C;
-$border-color-error: #EE4222;
+$border-color-error: $error-color;
 $border-color-disabled: #00000026;
-$border-color-bronze: #9E6955;
+$border-color-bronze: $border-color;
 
 // -------  Font colors ------- //
 $primary-font-color: #1C1C1C;
 $secondary-font-color: #FFFFFF;
 
 // -------  Font color states------- //
-$font-color-disabled: #8E8E8E;
-$font-color-error: #EE4222;
+$font-color-disabled: $disabled-color;
+$font-color-error: $error-color;
 $font-color-placeholder: #D9D9D9;
 
 // ------- Font size ------- //
