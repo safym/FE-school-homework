@@ -28,17 +28,17 @@
   border-radius: 4px;
   color: $primary-font-color;
 
-  &__dropdown {
-    -moz-column-gap: 14px;
-         column-gap: 14px;
-  }
-
-  &__user-image {
+  &__image {
     border-radius: 50%;
   }
 
   &__icon path{
     fill: $secondary-bg-color;
+  }
+  
+  &--dropdown {
+    -moz-column-gap: 14px;
+         column-gap: 14px;
   }
 
   &--outlined {
