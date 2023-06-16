@@ -1,0 +1,72 @@
+@import "../variables.scss";
+
+.button {
+  display: block;
+  height: 42px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: $font-weight-redular;
+  font-size: $font-size-m;
+
+  border-radius: 4px;
+  color: $primary-font-color;
+
+  &__image {
+    border-radius: 50%;
+  }
+
+  &__icon path {
+    fill: $secondary-bg-color;
+  }
+
+  &--dropdown {
+    -moz-column-gap: 14px;
+    column-gap: 14px;
+
+    &-active {
+      background-color: $secondary-bg-color;
+      color: $primary-font-color;
+    }
+    
+    &-active path {
+      fill: $secondary-bg-color-active;
+    }
+  }
+
+  &--small {
+    min-width: 42px;
+  }
+
+  &--secondary {
+    border: 1px solid $border-color;
+
+    &:hover {
+      background-color: $secondary-bg-color-hover;
+      border-color: $border-color-hover;
+    }
+
+    &:active {
+      background-color: $secondary-bg-color-active;
+      border-color: $border-color-active;
+    }
+  }
+
+  &--nav {
+    border: 1px solid $secondary-bg-color;
+    color: $secondary-font-color;
+
+    &-active {
+      background-color: $secondary-bg-color;
+      color: $primary-font-color;
+    }
+
+    &:hover {
+      background: $secondary-bg-color-hover;
+      color: $primary-font-color;
+    }
+  }
+}
