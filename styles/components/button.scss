@@ -3,6 +3,9 @@
 .button {
   display: block;
   height: 42px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   padding: 0 16px;
 
   display: flex;
@@ -14,6 +17,7 @@
 
   border-radius: 4px;
   color: $primary-font-color;
+  cursor: pointer;
 
   &__image {
     border-radius: 50%;
@@ -23,22 +27,27 @@
     fill: $secondary-bg-color;
   }
 
-  &--dropdown {
-    -moz-column-gap: 14px;
-    column-gap: 14px;
-
-    &-active {
-      background-color: $secondary-bg-color;
-      color: $primary-font-color;
-    }
-    
-    &-active path {
-      fill: $secondary-bg-color-active;
-    }
+  &--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
   }
 
-  &--small {
-    min-width: 42px;
+  &--primary {
+    color: $secondary-font-color;
+    background-color: $primary-bg-color;
+
+    &:hover {
+      background-color: $primary-bg-color-hover;
+    }
+
+    &:active {
+      background-color: $primary-bg-color-active;
+    }
+
+    &-disabled {
+      color: $font-color-disabled;
+      background-color: $primary-bg-color-disabled;
+    }
   }
 
   &--secondary {
@@ -52,6 +61,10 @@
     &:active {
       background-color: $secondary-bg-color-active;
       border-color: $border-color-active;
+    }
+
+    &-disabled {
+      opacity: 0.5;
     }
   }
 
@@ -68,5 +81,23 @@
       background: $secondary-bg-color-hover;
       color: $primary-font-color;
     }
+  }
+
+  &--dropdown {
+    -moz-column-gap: 14px;
+    column-gap: 14px;
+
+    &-active {
+      background-color: $secondary-bg-color;
+      color: $primary-font-color;
+    }
+
+    &-active path {
+      fill: $secondary-bg-color-active;
+    }
+  }
+
+  &--small {
+    min-width: 42px;
   }
 }
