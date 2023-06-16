@@ -32,72 +32,76 @@
     pointer-events: none;
   }
 
-  &--primary {
-    color: $secondary-font-color;
-    background-color: $primary-bg-color;
+  &--style {
+    &--primary {
+      color: $secondary-font-color;
+      background-color: $primary-bg-color;
 
-    &:hover {
-      background-color: $primary-bg-color-hover;
+      &:hover {
+        background-color: $primary-bg-color-hover;
+      }
+
+      &:active {
+        background-color: $primary-bg-color-active;
+      }
+
+      &-disabled {
+        color: $font-color-disabled;
+        background-color: $primary-bg-color-disabled;
+      }
     }
 
-    &:active {
-      background-color: $primary-bg-color-active;
+    &--secondary {
+      border: 1px solid $border-color;
+
+      &:hover {
+        background-color: $secondary-bg-color-hover;
+        border-color: $border-color-hover;
+      }
+
+      &:active {
+        background-color: $secondary-bg-color-active;
+        border-color: $border-color-active;
+      }
+
+      &-disabled {
+        opacity: 0.5;
+      }
     }
 
-    &-disabled {
-      color: $font-color-disabled;
-      background-color: $primary-bg-color-disabled;
+    &--nav {
+      border: 1px solid $secondary-bg-color;
+      color: $secondary-font-color;
+
+      &-active {
+        background-color: $secondary-bg-color;
+        color: $primary-font-color;
+      }
+
+      &:hover {
+        background: $secondary-bg-color-hover;
+        color: $primary-font-color;
+      }
+    }
+
+    &--dropdown {
+      -moz-column-gap: 14px;
+      column-gap: 14px;
+
+      &-active {
+        background-color: $secondary-bg-color;
+        color: $primary-font-color;
+      }
+
+      &-active path {
+        fill: $secondary-bg-color-active;
+      }
     }
   }
 
-  &--secondary {
-    border: 1px solid $border-color;
-
-    &:hover {
-      background-color: $secondary-bg-color-hover;
-      border-color: $border-color-hover;
+  &--size {
+    &--small {
+      min-width: 42px;
     }
-
-    &:active {
-      background-color: $secondary-bg-color-active;
-      border-color: $border-color-active;
-    }
-
-    &-disabled {
-      opacity: 0.5;
-    }
-  }
-
-  &--nav {
-    border: 1px solid $secondary-bg-color;
-    color: $secondary-font-color;
-
-    &-active {
-      background-color: $secondary-bg-color;
-      color: $primary-font-color;
-    }
-
-    &:hover {
-      background: $secondary-bg-color-hover;
-      color: $primary-font-color;
-    }
-  }
-
-  &--dropdown {
-    -moz-column-gap: 14px;
-    column-gap: 14px;
-
-    &-active {
-      background-color: $secondary-bg-color;
-      color: $primary-font-color;
-    }
-
-    &-active path {
-      fill: $secondary-bg-color-active;
-    }
-  }
-
-  &--small {
-    min-width: 42px;
   }
 }
