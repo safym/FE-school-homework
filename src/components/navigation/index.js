@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Navigation</title>
-  </head>
-  <body>
+export class Navigation {
+  element;
+  subElement;
+
+  onClick = (event) => {
+    alert('navigation click')
+  }
+
+  constructor() {
+    this.render()
+    this.initListeners()
+  }
+
+  render() {
+    this.element = this.getElement();
+    this.subElement = this.getSubElement(this.element);
+  }
+
+  getElement() {
+    const element = document.createElement('div');
+    element.innerHTML = this.getTemplate();
+
+    return element.firstElementChild;
+  }
+
+  getTemplate() {
+    return `
     <header class="header">
       <nav class="header__nav">
         <ul class="header__list">
@@ -28,7 +45,7 @@
             <a class="header__user-button button button--style--dropdown" href="#">
               <img
                 class="button__image"
-                src="../img/assets/user.png"
+                src="src/img/assets/user.png"
                 alt="user image"
               />
               <svg
@@ -49,5 +66,14 @@
         </ul>
       </nav>
     </header>
-  </body>
-</html>
+    `
+  }
+
+  getSubElement(element) {
+    return element.firstElementChild
+  }
+
+  initListeners() {
+    this.subElement.addEventListener('click', this.onClick)
+  }
+}
