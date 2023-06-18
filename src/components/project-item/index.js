@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
-  </head>
-  <body>
+export class ProjectItem {
+  element;
+  subElement;
+
+  constructor() {
+    this.render()
+  }
+
+  render() {
+    this.element = this.getElement();
+    this.subElement = this.getSubElement(this.element);
+  }
+
+  getElement() {
+    const element = document.createElement('div');
+    element.innerHTML = this.getTemplate();
+
+    return element.firstElementChild;
+  }
+
+  getTemplate() {
+    return `
     <div class="item-card">
       <div class="item-card__body">
         <div class="item-card__title">
@@ -49,5 +61,10 @@
         </svg>
       </a>
     </div>
-  </body>
-</html>
+    `
+  }
+
+  getSubElement(element) {
+    return element.firstElementChild
+  }
+}
