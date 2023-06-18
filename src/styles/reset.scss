@@ -1,0 +1,21 @@
+// ------- reset styles (written by myself) ------- //
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul, 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+ul {
+  list-style: none;
+}
