@@ -22,7 +22,7 @@ export class EmptyPage {
     return `
     <div class="empty-page">
       <p class="empty-page__label">Не создан ни один проект</p>
-      <a href="#" class="empty-page__button button button--style--primary">
+      <a href="#" class="empty-page__button button button__style_primary">
         Добавить
       </a>
     </div>

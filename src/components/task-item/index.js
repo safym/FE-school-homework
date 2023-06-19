@@ -31,7 +31,7 @@ export class TaskItem {
           </p>
           <img
             class="item-card__image"
-            src="src/img/assets/user.png"
+            src="../img/assets/user.png"
             alt="user image"
           />
         </div>
@@ -40,15 +40,15 @@ export class TaskItem {
             <span class="item-card__id"
               >2653137653251836235432452513163168242748724298742287987322398742#12345678987654321</span
             >
-            <span class="item-card__info-label item-card__info-label--collapsed"
+            <span class="item-card__info-label item-card__info-label__collapsed"
               >Иванов И.И. создал(а) 1 час назад</span
             >
-            <span class="item-card__status item-card__status--draft"
+            <span class="item-card__status item-card__status_draft"
               >Черновик</span
             >
           </div>
           <div class="item-card__edit-group">
-            <span class="item-card__info-label item-card__info-label--collapsed"
+            <span class="item-card__info-label item-card__info-label__collapsed"
               >Баранов В.В. изменил(а) 1 минуту назад</span
             >
           </div>
@@ -56,7 +56,7 @@ export class TaskItem {
       </div>
       <a
         href="#"
-        class="item-card__edit-button button button--style--secondary button--size--small"
+        class="item-card__edit-button button button__style_secondary button__size_small"
       >
         <svg
           width="4"

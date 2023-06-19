@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../global/variables.scss";
 
 .item-card {
   position: relative;
@@ -81,7 +81,7 @@
   &__info-label {
     color: $font-color-disabled;
 
-    &--collapsed {
+    &__collapsed {
       overflow: hidden;
       white-space: wrap;
       text-overflow: ellipsis;
@@ -95,24 +95,24 @@
     border-radius: $border-radius;
     padding: 0 8px;
 
-    &--draft,
-    &--in-progress,
-    &--testing {
+    &_draft,
+    &_in-progress,
+    &_testing {
       background-color: $bronze-color;
     }
 
-    &--completed,
-    &--done,
-    &--closed,
-    &--active {
+    &_completed,
+    &_done,
+    &_losed,
+    &_active {
       background-color: $primary-color;
     }
 
-    &--deleted {
+    &_deleted {
       background-color: $error-color;
     }
 
-    &--in-active {
+    &_in-active {
       background-color: $disabled-color;
     }
   }

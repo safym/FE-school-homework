@@ -29,23 +29,23 @@ export class Navigation {
       <nav class="header__nav">
         <ul class="header__list">
           <li class="header__list-item">
-            <a class="header__button button button--style--nav button--style--nav-active" href="#">Проекты</a>
+            <a class="header__button button button__nav button__nav_active" href="#">Проекты</a>
           </li>
           <li class="header__list-item">
-            <a class="header__button button button--style--nav" href="#"
+            <a class="header__button button button__nav" href="#"
               >Задачи</a
             >
           </li>
           <li class="header__list-item">
-            <a class="header__button button button--style--nav href="#"
+            <a class="header__button button button__nav" href="#"
               >Пользователи</a
             >
           </li>
           <li class="header__list-item">
-            <a class="header__user-button button button--style--dropdown" href="#">
+            <a class="header__user-button button button__dropdown" href="#">
               <img
                 class="button__image"
-                src="src/img/assets/user.png"
+                src="../img/assets/user.png"
                 alt="user image"
               />
               <svg

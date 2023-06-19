@@ -32,12 +32,12 @@ export class ProjectItem {
             <span class="item-card__id"
               >#1</span
             >
-            <span class="item-card__info-label item-card__info-label--collapsed"
+            <span class="item-card__info-label item-card__info-label__collapsed"
               >Иванов И.И. создал(а) 1 час назад</span
             >
           </div>
           <div class="item-card__edit-group">
-            <span class="item-card__info-label item-card__info-label--collapsed"
+            <span class="item-card__info-label item-card__info-label__collapsed"
               >Баранов В.В. изменил(а) 1 минуту назад</span
             >
           </div>
@@ -45,7 +45,7 @@ export class ProjectItem {
       </div>
       <a
         href="#"
-        class="item-card__edit-button button button--style--secondary button--size--small"
+        class="item-card__edit-button button button__style_secondary button__size_small"
       >
         <svg
           width="4"

@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../global/variables.scss";
 
 .button {
   display: block;
@@ -27,13 +27,42 @@
     fill: $secondary-bg-color;
   }
 
-  &--disabled {
+  &__nav {
+    border: 1px solid $secondary-bg-color;
+    color: $secondary-font-color;
+
+    &_active {
+      background-color: $secondary-bg-color;
+      color: $primary-font-color;
+    }
+
+    &:hover {
+      background: $secondary-bg-color-hover;
+      color: $primary-font-color;
+    }
+  }
+
+  &__dropdown {
+    -moz-column-gap: 14px;
+    column-gap: 14px;
+
+    &_active {
+      background-color: $secondary-bg-color;
+      color: $primary-font-color;
+    }
+
+    &_active path {
+      fill: $secondary-bg-color-active;
+    }
+  }
+
+  &__disabled {
     cursor: not-allowed;
     pointer-events: none;
   }
 
-  &--style {
-    &--primary {
+  &__style {
+    &_primary {
       color: $secondary-font-color;
       background-color: $primary-bg-color;
 
@@ -45,13 +74,13 @@
         background-color: $primary-bg-color-active;
       }
 
-      &-disabled {
+      &_disabled {
         color: $font-color-disabled;
         background-color: $primary-bg-color-disabled;
       }
     }
 
-    &--secondary {
+    &_secondary {
       border: 1px solid $border-color;
 
       &:hover {
@@ -64,43 +93,14 @@
         border-color: $border-color-active;
       }
 
-      &-disabled {
+      &_disabled {
         opacity: 0.5;
-      }
-    }
-
-    &--nav {
-      border: 1px solid $secondary-bg-color;
-      color: $secondary-font-color;
-
-      &-active {
-        background-color: $secondary-bg-color;
-        color: $primary-font-color;
-      }
-
-      &:hover {
-        background: $secondary-bg-color-hover;
-        color: $primary-font-color;
-      }
-    }
-
-    &--dropdown {
-      -moz-column-gap: 14px;
-      column-gap: 14px;
-
-      &-active {
-        background-color: $secondary-bg-color;
-        color: $primary-font-color;
-      }
-
-      &-active path {
-        fill: $secondary-bg-color-active;
       }
     }
   }
 
-  &--size {
-    &--small {
+  &__size {
+    &_small {
       min-width: 42px;
     }
   }
