@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "browserslist": [
-    "not ie < 9",
     "last 15 versions"
   ],
   "scripts": {
