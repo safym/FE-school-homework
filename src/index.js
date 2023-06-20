@@ -1,7 +1,7 @@
 import html from "./index.html";
 import "./style.scss";
 
-import user from './img/assets/user.png';
+import user from './assets/img/user.png';
 
 import { EmptyPage } from "./components/empty-page/index.js";
 import { Navigation } from "./components/navigation/index.js";
