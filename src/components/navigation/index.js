@@ -45,7 +45,7 @@ export class Navigation {
             <a class="header__user-button button button__dropdown" href="#">
               <img
                 class="button__image"
-                src="/assets/img/user.png"
+                src="/assets/images/user.png"
                 alt="user image"
               />
               <svg

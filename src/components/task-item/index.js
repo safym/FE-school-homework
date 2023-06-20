@@ -31,7 +31,7 @@ export class TaskItem {
           </p>
           <img
             class="item-card__image"
-            src="/assets/img/user.png"
+            src="/assets/images/user.png"
             alt="user image"
           />
         </div>
