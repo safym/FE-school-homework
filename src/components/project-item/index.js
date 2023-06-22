@@ -1,9 +1,23 @@
 export class ProjectItem {
+  id;
+  description;
+  creator;
+  createTime;
+  lastEditor;
+  editTime;
+
   element;
   subElement;
 
-  constructor() {
-    this.render()
+  constructor({ id, description, creator, createTime, lastEditor, editTime }) {
+    this.id = id;
+    this.description = description;
+    this.creator = creator;
+    this.createTime = createTime;
+    this.lastEditor = lastEditor;
+    this.editTime = editTime;
+
+    this.render();
   }
 
   render() {
@@ -12,7 +26,7 @@ export class ProjectItem {
   }
 
   getElement() {
-    const element = document.createElement('div');
+    const element = document.createElement("div");
     element.innerHTML = this.getTemplate();
 
     return element.firstElementChild;
@@ -24,21 +38,21 @@ export class ProjectItem {
       <div class="item-card__body">
         <div class="item-card__title">
           <p class="item-card__name">
-            Название
+            ${this.description}
           </p>
         </div>
         <div class="item-card__footer">
           <div class="item-card__create-group">
             <span class="item-card__id"
-              >#1</span
+              >${this.id}</span
             >
             <span class="item-card__info-label item-card__info-label__collapsed"
-              >Иванов И.И. создал(а) 1 час назад</span
+              >${this.creator} создал(а) ${this.createTime}</span
             >
           </div>
           <div class="item-card__edit-group">
             <span class="item-card__info-label item-card__info-label__collapsed"
-              >Баранов В.В. изменил(а) 1 минуту назад</span
+              >${this.lastEditor} изменил(а) ${this.editTime}</span
             >
           </div>
         </div>
@@ -54,10 +68,10 @@ export class ProjectItem {
         </div>
       </a>
     </div>
-    `
+    `;
   }
 
   getSubElement(element) {
-    return element.firstElementChild
+    return element.firstElementChild;
   }
 }

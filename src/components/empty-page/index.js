@@ -1,8 +1,14 @@
 export class EmptyPage {
+  text;
+  addHref;
+
   element;
   subElement;
 
-  constructor() {
+  constructor({ text, addHref = "#" }) {
+    this.text = text;
+    this.addHref = addHref;
+
     this.render();
   }
 
@@ -21,8 +27,8 @@ export class EmptyPage {
   getTemplate() {
     return `
     <div class="empty-page">
-      <p class="empty-page__label">Не создан ни один проект</p>
-      <a href="#" class="empty-page__button button button__size_large button__style_primary">
+      <p class="empty-page__label">${this.text}</p>
+      <a href="${this.addHref}" class="empty-page__button button button__size_large button__style_primary">
         Добавить
       </a>
     </div>
