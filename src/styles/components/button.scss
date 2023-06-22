@@ -1,17 +1,11 @@
-@import "../global/variables.scss";
-
 .button {
+  @include flexCenter;
   $size: 42px;
 
-  display: block;
   height: $size;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   font-weight: $font-weight-redular;
   font-size: $font-size-m;
