@@ -6,6 +6,18 @@
     display: flex;
     justify-content: flex-end;
     -moz-column-gap: 24px;
-         column-gap: 24px;
+    column-gap: 24px;
+  }
+
+  &__list-item {
+    position: relative;
+  }
+
+  &__user-button {
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid $secondary-color;
+    }
   }
 }
