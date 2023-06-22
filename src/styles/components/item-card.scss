@@ -1,8 +1,11 @@
 @import "../global/variables.scss";
 
 .item-card {
+  $height: 69px;
+
   position: relative;
-  height: 69px;
+  min-height: $height;
+  max-height: $height;
   width: 100%;
   padding: 0 16px 8px 16px;
 
