@@ -1,13 +1,19 @@
+// import main index.html for webpack
 import html from "./index.html";
+
+// import main style.scss for webpck
 import "./style.scss";
 
+// import images for webpack
 import user from './assets/images/user.png';
 
+// import components 
 import { EmptyPage } from "./components/empty-page/index.js";
 import { Navigation } from "./components/navigation/index.js";
 import { ProjectItem } from "./components/project-item/index.js";
 import { TaskItem } from "./components/task-item/index.js";
 
+// import data for components
 import { PROJECT_DATA, TASK_DATA, EMPTY_PAGE_DATA } from './data.js'
 
 const app = document.getElementById("app");
