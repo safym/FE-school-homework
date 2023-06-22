@@ -1,36 +1,35 @@
+import { Dropdown } from "../dropdown";
+
 const MENU_BUTTON_ID = "user-button";
 
 export class Navigation {
-  dropdownButton;
-  dropdownIcon;
-  menuIsOpen;
-  menuElement;
-
   element;
   subElement;
+  dropdownButton;
+  menuList = ['Профиль', 'Выход']
+  menu;
+
 
   onClick = (event) => {
     const target = event.target;
     const closestMenuButton = target.closest(`#${MENU_BUTTON_ID}`);
 
     if (closestMenuButton) {
-      if (!this.menuIsOpen) {
-        this.openMenu();
+      if (!this.menu.isOpen) {
+        this.menu.open();
       } else {
-        if (this.menuElement) {
-          this.closeMenu();
+        if (this.menu.element) {
+          this.menu.close();
         }
       }
     } else {
-      if (this.menuIsOpen && this.menuElement) {
-        this.closeMenu();
+      if (this.menu.isOpen && this.menu.element) {
+        this.menu.close();
       }
     }
   };
 
   constructor() {
-    this.menuIsOpen = false;
-
     this.render();
     this.initListeners();
   }
@@ -39,6 +38,7 @@ export class Navigation {
     this.element = this.getElement();
     this.subElement = this.getSubElement(this.element);
     this.dropdownButton = this.subElement.querySelector(`#${MENU_BUTTON_ID}`);
+    this.menu = new Dropdown(this.dropdownButton, this.menuList, "dropdown_active");
   }
 
   getElement() {
@@ -84,42 +84,6 @@ export class Navigation {
       </nav>
     </header>
     `;
-  }
-
-  getMenuElement() {
-    const menu = document.createElement("div");
-    menu.innerHTML = this.getMenuTemplate();
-
-    return menu;
-  }
-
-  getMenuTemplate() {
-    return `
-    <div class="dropdown__menu">
-      <ul class="dropdown__list">
-        <li class="dropdown__list-item">
-          <a class="dropdown__link" href="#">Профиль</a>
-        </li>
-        <li class="dropdown__list-item">
-          <a class="dropdown__link" href="#">Выход</a>
-        </li>
-      </ul>
-    </div>
-    `;
-  }
-
-  openMenu() {
-    this.menuIsOpen = true;
-    this.menuElement = this.getMenuElement();
-
-    this.dropdownButton.parentElement.append(this.menuElement);
-    this.dropdownButton.classList.add("dropdown_active");
-  }
-
-  closeMenu() {
-    this.menuIsOpen = false;
-    this.dropdownButton.classList.remove("dropdown_active");
-    this.menuElement.remove();
   }
 
   getSubElement(element) {
