@@ -3,7 +3,7 @@ export class EmptyPage {
   subElement;
 
   constructor() {
-    this.render()
+    this.render();
   }
 
   render() {
@@ -12,7 +12,7 @@ export class EmptyPage {
   }
 
   getElement() {
-    const element = document.createElement('div');
+    const element = document.createElement("div");
     element.innerHTML = this.getTemplate();
 
     return element.firstElementChild;
@@ -22,15 +22,14 @@ export class EmptyPage {
     return `
     <div class="empty-page">
       <p class="empty-page__label">Не создан ни один проект</p>
-      <a href="#" class="empty-page__button button button__style_primary">
+      <a href="#" class="empty-page__button button button__size_large button__style_primary">
         Добавить
       </a>
     </div>
-    `
+    `;
   }
 
   getSubElement(element) {
-    return element.firstElementChild
+    return element.firstElementChild;
   }
 }
-

@@ -124,5 +124,7 @@
 
   &:hover &__edit-button {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
