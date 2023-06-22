@@ -8,15 +8,17 @@ import { Navigation } from "./components/navigation/index.js";
 import { ProjectItem } from "./components/project-item/index.js";
 import { TaskItem } from "./components/task-item/index.js";
 
+import { PROJECT_DATA, TASK_DATA, EMPTY_PAGE_DATA } from './data.js'
+
 const app = document.getElementById("app");
 
 const taskContainer = document.createElement("div");
 taskContainer.id = "container";
 
 const navigation = new Navigation();
-const projectItem = new ProjectItem();
-const taskItem = new TaskItem();
-const emptyPage = new EmptyPage();
+const projectItem = new ProjectItem(PROJECT_DATA);
+const taskItem = new TaskItem(TASK_DATA);
+const emptyPage = new EmptyPage(EMPTY_PAGE_DATA);
 
 taskContainer.append(projectItem.element);
 taskContainer.append(taskItem.element);
