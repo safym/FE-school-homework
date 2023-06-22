@@ -37,20 +37,6 @@
     }
   }
 
-  &__dropdown {
-    -moz-column-gap: 14px;
-    column-gap: 14px;
-
-    &_active {
-      background-color: $secondary-bg-color;
-      color: $primary-font-color;
-    }
-
-    // &_active path {
-    //   fill: $secondary-bg-color-active;
-    // }
-  }
-
   &__icon-container {
     position: relative;
     width: 24px;

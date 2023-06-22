@@ -1,0 +1,38 @@
+.dropdown {
+  -moz-column-gap: 14px;
+  column-gap: 14px;
+
+  &__menu {
+    background-color: $secondary-bg-color;
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 0;
+    z-index: 2;
+  
+    padding: 10px 0;
+  
+    box-shadow: $shadow;
+  
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &__link {
+    display: block;
+    padding: 8px 16px;
+  }
+
+  &_active {
+    background-color: $secondary-bg-color;
+    color: $primary-font-color;
+
+    // & svg {
+    //   transform: rotate(180deg);
+    // }
+  }
+
+  // &_active path {
+  //   fill: $secondary-bg-color-active;
+  // }
+}
