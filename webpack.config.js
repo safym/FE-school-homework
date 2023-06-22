@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.js"),
@@ -54,14 +54,27 @@ module.exports = {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'assets/fonts/[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      }
+              name: "assets/fonts/[name].[ext]",
+              outputPath: "fonts/",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-inline-loader",
+            options: {
+              removeTags: true,
+              removingTags: ["title", "desc", "defs", "style"],
+              removeSVGTagAttrs: false,
+            },
+          },
+        ],
+      },
     ],
   },
   stats: {
