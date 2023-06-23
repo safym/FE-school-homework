@@ -24,7 +24,7 @@ export class Item {
   onMouseleave = (event) => {
     if (this.menu.isOpen) {
       this.menu.isOpen = false;
-      this.menu.remove();
+      this.menu.close();
     }
   };
 
@@ -84,6 +84,7 @@ export class Item {
       <div class="item-card__button-wrapper">
         <a
           id="${this.buttonId}"
+          data-dropdown="button"
           href="#"
           class="item-card__edit-button button button__style_secondary button__size_small"
         >

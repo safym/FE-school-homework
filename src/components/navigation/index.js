@@ -65,7 +65,7 @@ export class Navigation {
             >
           </li>
           <li class="header__list-item">
-            <a id="${this.buttonId}" class="header__user-button button button__size_large button__dropdown dropdown" href="#">
+            <a id="${this.buttonId}" data-dropdown="button" class="header__user-button button button__size_large button__dropdown dropdown" href="#">
               <img
                 class="button__image"
                 src="/assets/images/user.png"

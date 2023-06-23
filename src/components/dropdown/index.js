@@ -21,10 +21,6 @@ export class Dropdown {
           this.close();
         }
       }
-    } else {
-      if (this.isOpen && this.element) {
-        this.close();
-      }
     }
   };
 
@@ -59,7 +55,7 @@ export class Dropdown {
 
   getTemplate(listHtml) {
     return `
-    <div class="dropdown__menu">
+    <div class="dropdown__menu" data-dropdown="list">
       ${listHtml}
     </div>
     `;
