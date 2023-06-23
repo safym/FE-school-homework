@@ -8,19 +8,24 @@
     top: calc(100% + 2px);
     right: 0;
     z-index: 2;
-  
+
     padding: 10px 0;
-  
+
     box-shadow: $shadow;
-  
+
     display: flex;
     flex-direction: column;
   }
 
-
   &__link {
     display: block;
     padding: 8px 16px;
+
+    &_style {
+      &_delete {
+        color: $error-color;
+      }
+    }
   }
 
   &_active {
