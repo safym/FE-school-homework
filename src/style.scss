@@ -2,12 +2,12 @@
 @import "./styles/global/variables.scss";
 @import "./styles/global/mixins.scss";
 
-@import "./styles/components/button.scss";
-@import "./styles/components/item-card.scss";
+@import "./styles/blocks/button.scss";
 
 @import "./components/empty-page/style.scss";
 @import "./components/navigation/style.scss";
 @import "./components/dropdown/style.scss";
+@import "./components/item/style.scss";
 
 @import "./styles/global/fonts.scss";
 
