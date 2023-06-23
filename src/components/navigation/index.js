@@ -3,8 +3,7 @@ import { Dropdown } from "../dropdown";
 const MENU_BUTTON_ID = "nav-button";
 
 export class Navigation {
-  elementWrapper;
-  subElement;
+  element;
 
   dropdownButton;
   buttonId;
@@ -22,8 +21,7 @@ export class Navigation {
   }
 
   render() {
-    this.elementWrapper = this.getElementWrapper();
-    this.element = this.getElement(this.elementWrapper);
+    this.element = this.getElement();
 
     this.dropdownButton = this.element.querySelector(`#${this.buttonId}`);
 
@@ -35,14 +33,10 @@ export class Navigation {
     );
   }
 
-  getElementWrapper() {
+  getElement() {
     const elementWrapper = document.createElement("div");
     elementWrapper.innerHTML = this.getTemplate();
 
-    return elementWrapper;
-  }
-
-  getElement(elementWrapper) {
     return elementWrapper.firstElementChild;
   }
 

@@ -1,7 +1,6 @@
 import { Dropdown } from "../dropdown";
 
 export class Item {
-  elementWrapper;
   element;
 
   id;
@@ -21,6 +20,8 @@ export class Item {
   ];
   menu;
 
+  tooltip;
+
   onMouseleave = (event) => {
     if (this.menu.isOpen) {
       this.menu.isOpen = false;
@@ -31,8 +32,7 @@ export class Item {
   constructor() {}
 
   render() {
-    this.elementWrapper = this.getElementWrapper();
-    this.element = this.getElement(this.elementWrapper);
+    this.element = this.getElement();
 
     this.dropdownButton = this.element.querySelector(`#${this.buttonId}`);
     this.menu = new Dropdown(
@@ -43,14 +43,10 @@ export class Item {
     );
   }
 
-  getElementWrapper() {
+  getElement() {
     const elementWrapper = document.createElement("div");
     elementWrapper.innerHTML = this.getTemplate();
 
-    return elementWrapper;
-  }
-
-  getElement(elementWrapper) {
     return elementWrapper.firstElementChild;
   }
 
@@ -59,14 +55,14 @@ export class Item {
     <div class="item-card">
       <div class="item-card__body">
         <div class="item-card__title">
-          <p class="item-card__name">
+          <p data-tooltip="${this.description}" class="item-card__name">
             ${this.description}
           </p>
           ${this.getUserImgTemplate(this.userImg)}
         </div>
         <div class="item-card__footer">
           <div class="item-card__create-group">
-            <span class="item-card__id"
+            <span data-tooltip="${this.id}" class="item-card__id"
               >${this.id}</span
             >
             <span class="item-card__info-label item-card__info-label__collapsed"

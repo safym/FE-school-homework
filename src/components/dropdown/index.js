@@ -1,5 +1,4 @@
 export class Dropdown {
-  elementWrapper;
   element;
 
   isOpen;
@@ -35,21 +34,15 @@ export class Dropdown {
   }
 
   render() {
-    this.elementWrapper = this.getElementWrapper();
-    this.element = this.getElement(this.elementWrapper);
+    this.element = this.getElement();
   }
 
-  getElementWrapper() {
-    const menu = document.createElement("div");
-
+  getElement( ) {
+    const elementWrapper = document.createElement("div");
     const listHtml = this.getListHtml(this.list);
 
-    menu.innerHTML = this.getTemplate(listHtml);
+    elementWrapper.innerHTML = this.getTemplate(listHtml);
 
-    return menu;
-  }
-
-  getElement(elementWrapper) {
     return elementWrapper.firstElementChild;
   }
 

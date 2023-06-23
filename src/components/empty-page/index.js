@@ -3,7 +3,6 @@ export class EmptyPage {
   addHref;
 
   element;
-  subElement;
 
   constructor({ text, addHref = "#" }) {
     this.text = text;
@@ -14,14 +13,13 @@ export class EmptyPage {
 
   render() {
     this.element = this.getElement();
-    this.subElement = this.getSubElement(this.element);
   }
 
   getElement() {
-    const element = document.createElement("div");
-    element.innerHTML = this.getTemplate();
+    const elementWrapper = document.createElement("div");
+    elementWrapper.innerHTML = this.getTemplate();
 
-    return element.firstElementChild;
+    return elementWrapper.firstElementChild;
   }
 
   getTemplate() {
@@ -33,9 +31,5 @@ export class EmptyPage {
       </a>
     </div>
     `;
-  }
-
-  getSubElement(element) {
-    return element.firstElementChild;
   }
 }
