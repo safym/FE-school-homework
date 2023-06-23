@@ -8,6 +8,7 @@ import "./style.scss";
 import user from './assets/images/user.png';
 
 // import components 
+import { Dropdown } from "./components/dropdown/index.js";
 import { EmptyPage } from "./components/empty-page/index.js";
 import { Navigation } from "./components/navigation/index.js";
 import { ProjectItem } from "./components/project-item/index.js";

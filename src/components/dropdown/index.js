@@ -1,12 +1,31 @@
 export class Dropdown {
+  elementWrapper;
+  element;
+
   isOpen;
   dropdownButton;
   activeClass;
   list;
   listHtml;
 
-  elementWrapper;
-  element;
+  onClick = (event) => {
+    const target = event.target;
+    const closestMenuButton = target.closest(`#${MENU_BUTTON_ID}`);
+
+    if (closestMenuButton) {
+      if (!this.menu.isOpen) {
+        this.menu.open();
+      } else {
+        if (this.menu.element) {
+          this.menu.close();
+        }
+      }
+    } else {
+      if (this.menu.isOpen && this.menu.element) {
+        this.menu.close();
+      }
+    }
+  };
 
   constructor(dropdownButton, list, activeClass) {
     this.isOpen = false;
@@ -60,9 +79,11 @@ export class Dropdown {
   }
 
   getListItemTemplate(item) {
+    const linkStyleClass = `dropdown__link_style_${item.type}`
+
     return `
     <li class="dropdown__list-item">
-      <a class="dropdown__link" href="#">${item}</a>
+      <a class="dropdown__link ${linkStyleClass}" href="#">${item.label}</a>
     </li>
     `;
   }
@@ -78,6 +99,12 @@ export class Dropdown {
     this.isOpen = false;
     this.dropdownButton.classList.remove(this.activeClass);
     this.element.remove();
+  }
+
+  remove() {
+    if (this.element) {
+      this.element.remove()
+    }
   }
 
   destroy() {

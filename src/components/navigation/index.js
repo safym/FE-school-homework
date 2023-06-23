@@ -7,7 +7,10 @@ export class Navigation {
   subElement;
 
   dropdownButton;
-  menuList = ["Профиль", "Выход"];
+  menuList = [
+    { label: "Профиль", type: "normal" },
+    { label: "Выход", type: "normal" },
+  ];
   menu;
 
   onClick = (event) => {
@@ -37,6 +40,7 @@ export class Navigation {
   render() {
     this.elementWrapper = this.getElementWrapper();
     this.element = this.getElement(this.elementWrapper);
+
     this.dropdownButton = this.element.querySelector(`#${MENU_BUTTON_ID}`);
     this.menu = new Dropdown(
       this.dropdownButton,
@@ -52,8 +56,8 @@ export class Navigation {
     return elementWrapper;
   }
 
-  getElement(element) {
-    return element.firstElementChild;
+  getElement(elementWrapper) {
+    return elementWrapper.firstElementChild;
   }
 
   getTemplate() {
@@ -98,9 +102,15 @@ export class Navigation {
     document.addEventListener("click", this.onClick);
   }
 
+  remove() {
+    if (this.element) {
+      this.element.remove();
+    }
+  }
+
   destroy() {
     document.removeEventListener("click", this.onClick);
-    this.element.revove();
+    this.element.remove();
     this.element = null;
   }
 }
