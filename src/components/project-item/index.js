@@ -1,4 +1,3 @@
-import { Dropdown } from "../dropdown";
 import { Item } from "../item";
 
 const MENU_BUTTON_ID = "project-button";

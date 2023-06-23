@@ -1,39 +1,23 @@
 import { Dropdown } from "../dropdown";
 
-const MENU_BUTTON_ID = "user-button";
+const MENU_BUTTON_ID = "nav-button";
 
 export class Navigation {
   elementWrapper;
   subElement;
 
   dropdownButton;
+  buttonId;
   menuList = [
     { label: "Профиль", type: "normal" },
     { label: "Выход", type: "normal" },
   ];
   menu;
 
-  onClick = (event) => {
-    const target = event.target;
-    const closestMenuButton = target.closest(`#${MENU_BUTTON_ID}`);
-
-    if (closestMenuButton) {
-      if (!this.menu.isOpen) {
-        this.menu.open();
-      } else {
-        if (this.menu.element) {
-          this.menu.close();
-        }
-      }
-    } else {
-      if (this.menu.isOpen && this.menu.element) {
-        this.menu.close();
-      }
-    }
-  };
-
   constructor() {
+    this.buttonId = `${MENU_BUTTON_ID}-user`
     this.render();
+
     this.initListeners();
   }
 
@@ -41,9 +25,11 @@ export class Navigation {
     this.elementWrapper = this.getElementWrapper();
     this.element = this.getElement(this.elementWrapper);
 
-    this.dropdownButton = this.element.querySelector(`#${MENU_BUTTON_ID}`);
+    this.dropdownButton = this.element.querySelector(`#${this.buttonId}`);
+
     this.menu = new Dropdown(
       this.dropdownButton,
+      this.buttonId,
       this.menuList,
       "dropdown_active"
     );
@@ -79,7 +65,7 @@ export class Navigation {
             >
           </li>
           <li class="header__list-item">
-            <a id="${MENU_BUTTON_ID}" class="header__user-button button button__size_large button__dropdown dropdown" href="#">
+            <a id="${this.buttonId}" class="header__user-button button button__size_large button__dropdown dropdown" href="#">
               <img
                 class="button__image"
                 src="/assets/images/user.png"
@@ -99,7 +85,7 @@ export class Navigation {
   }
 
   initListeners() {
-    document.addEventListener("click", this.onClick);
+    this.dropdownButton.addEventListener("click", this.menu.onClick);
   }
 
   remove() {
@@ -109,7 +95,7 @@ export class Navigation {
   }
 
   destroy() {
-    document.removeEventListener("click", this.onClick);
+    this.dropdownButton.removeEventListener("click", this.menu.onClick);
     this.element.remove();
     this.element = null;
   }

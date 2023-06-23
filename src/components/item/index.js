@@ -12,9 +12,9 @@ export class Item {
   createTime;
   lastEditor;
   editTime;
-  buttonId;
 
   dropdownButton;
+  buttonId;
   menuList = [
     { label: "Редактировать", type: "normal" },
     { label: "Удалить", type: "delete" },
@@ -28,25 +28,6 @@ export class Item {
     }
   };
 
-  onClick = (event) => {
-    const target = event.target;
-    const closestMenuButton = target.closest(`#${this.buttonId}`);
-
-    if (closestMenuButton) {
-      if (!this.menu.isOpen) {
-        this.menu.open();
-      } else {
-        if (this.menu.element) {
-          this.menu.close();
-        }
-      }
-    } else {
-      if (this.menu.isOpen && this.menu.element) {
-        this.menu.close();
-      }
-    }
-  };
-
   constructor() {}
 
   render() {
@@ -56,6 +37,7 @@ export class Item {
     this.dropdownButton = this.element.querySelector(`#${this.buttonId}`);
     this.menu = new Dropdown(
       this.dropdownButton,
+      this.buttonId,
       this.menuList,
       "button__style_secondary_active"
     );
@@ -135,7 +117,7 @@ export class Item {
   }
 
   initListeners() {
-    document.addEventListener("click", this.onClick);
+    this.dropdownButton.addEventListener("click", this.menu.onClick);
     this.element.addEventListener("mouseleave", this.onMouseleave);
   }
 
@@ -146,7 +128,7 @@ export class Item {
   }
 
   destroy() {
-    document.removeEventListener("click", this.onClick);
+    this.dropdownButton.removeEventListener("click", this.menu.onClick);
     this.element.removeEventListener("mouseleave", this.onMouseleave);
     this.element.remove();
     this.element = null;

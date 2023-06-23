@@ -4,33 +4,35 @@ export class Dropdown {
 
   isOpen;
   dropdownButton;
+  buttonId;
   activeClass;
   list;
   listHtml;
 
   onClick = (event) => {
     const target = event.target;
-    const closestMenuButton = target.closest(`#${MENU_BUTTON_ID}`);
+    const closestMenuButton = target.closest(`#${this.buttonId}`);
 
     if (closestMenuButton) {
-      if (!this.menu.isOpen) {
-        this.menu.open();
+      if (!this.isOpen) {
+        this.open();
       } else {
-        if (this.menu.element) {
-          this.menu.close();
+        if (this.element) {
+          this.close();
         }
       }
     } else {
-      if (this.menu.isOpen && this.menu.element) {
-        this.menu.close();
+      if (this.isOpen && this.element) {
+        this.close();
       }
     }
   };
 
-  constructor(dropdownButton, list, activeClass) {
+  constructor(dropdownButton, buttonId, list, activeClass) {
     this.isOpen = false;
     this.list = list;
     this.dropdownButton = dropdownButton;
+    this.buttonId = buttonId;
     this.activeClass = activeClass;
 
     this.render();
@@ -79,7 +81,7 @@ export class Dropdown {
   }
 
   getListItemTemplate(item) {
-    const linkStyleClass = `dropdown__link_style_${item.type}`
+    const linkStyleClass = `dropdown__link_style_${item.type}`;
 
     return `
     <li class="dropdown__list-item">
@@ -103,7 +105,7 @@ export class Dropdown {
 
   remove() {
     if (this.element) {
-      this.element.remove()
+      this.element.remove();
     }
   }
 
