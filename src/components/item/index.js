@@ -1,4 +1,5 @@
 import { Dropdown } from "../dropdown";
+import { Tooltip } from "../tooltip";
 
 export class Item {
   element;
@@ -41,6 +42,8 @@ export class Item {
       this.menuList,
       "button__style_secondary_active"
     );
+
+    this.tooltip = new Tooltip();
   }
 
   getElement() {
@@ -116,6 +119,8 @@ export class Item {
   initListeners() {
     this.dropdownButton.addEventListener("click", this.menu.onClick);
     this.element.addEventListener("mouseleave", this.onMouseleave);
+    this.element.addEventListener("pointerout", this.tooltip.onPoinerOut);
+    this.element.addEventListener("pointerover", this.tooltip.onPoinerOver);
   }
 
   remove() {
@@ -127,6 +132,8 @@ export class Item {
   destroy() {
     this.dropdownButton.removeEventListener("click", this.menu.onClick);
     this.element.removeEventListener("mouseleave", this.onMouseleave);
+    this.element.removeEventListener("pointerout", this.tooltip.onPoinerOut);
+    this.element.removeEventListener("pointerover", this.tooltip.onPoinerOver);
     this.element.remove();
     this.element = null;
   }
