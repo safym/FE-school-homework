@@ -1,0 +1,38 @@
+.tooltip {
+  max-width: 400px;
+  padding-top: 20px;
+  position: fixed;
+  top: 100px;
+  z-index: 40;
+
+  font-size: $font-size-m;
+  text-align: left;
+
+  &__container {
+    position: relative;
+    z-index: 30;
+
+    padding: 16px;
+
+    border-radius: $border-radius;
+    background: $secondary-color;
+    box-shadow: $shadow;
+  }
+
+  &:before {
+    position: relative;
+    top: 11px;
+    left: 46%;
+    content: " ";
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: $secondary-bg-color;
+    box-shadow: $shadow;
+  
+    transform: rotate(135deg);
+    z-index: 20;
+  }
+  
+}
