@@ -118,6 +118,12 @@
     }
   }
 
+  &__button-wrapper {
+    align-self: center;
+    max-height: 42px;
+    position: relative;
+  }
+
   &__edit-button {
     align-self: center;
     display: none;
