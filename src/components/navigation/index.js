@@ -3,12 +3,12 @@ import { Dropdown } from "../dropdown";
 const MENU_BUTTON_ID = "user-button";
 
 export class Navigation {
-  element;
+  elementWrapper;
   subElement;
-  dropdownButton;
-  menuList = ['Профиль', 'Выход']
-  menu;
 
+  dropdownButton;
+  menuList = ["Профиль", "Выход"];
+  menu;
 
   onClick = (event) => {
     const target = event.target;
@@ -35,16 +35,24 @@ export class Navigation {
   }
 
   render() {
-    this.element = this.getElement();
-    this.subElement = this.getSubElement(this.element);
-    this.dropdownButton = this.subElement.querySelector(`#${MENU_BUTTON_ID}`);
-    this.menu = new Dropdown(this.dropdownButton, this.menuList, "dropdown_active");
+    this.elementWrapper = this.getElementWrapper();
+    this.element = this.getElement(this.elementWrapper);
+    this.dropdownButton = this.element.querySelector(`#${MENU_BUTTON_ID}`);
+    this.menu = new Dropdown(
+      this.dropdownButton,
+      this.menuList,
+      "dropdown_active"
+    );
   }
 
-  getElement() {
-    const element = document.createElement("div");
-    element.innerHTML = this.getTemplate();
+  getElementWrapper() {
+    const elementWrapper = document.createElement("div");
+    elementWrapper.innerHTML = this.getTemplate();
 
+    return elementWrapper;
+  }
+
+  getElement(element) {
     return element.firstElementChild;
   }
 
@@ -86,11 +94,13 @@ export class Navigation {
     `;
   }
 
-  getSubElement(element) {
-    return element.firstElementChild;
-  }
-
   initListeners() {
     document.addEventListener("click", this.onClick);
+  }
+
+  destroy() {
+    document.removeEventListener("click", this.onClick);
+    this.element.revove();
+    this.element = null;
   }
 }
