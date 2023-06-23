@@ -80,7 +80,8 @@
         border-color: $border-color-hover;
       }
 
-      &:active {
+      &:active,
+      &_active {
         background-color: $secondary-bg-color-active;
         border-color: $border-color-active;
       }
