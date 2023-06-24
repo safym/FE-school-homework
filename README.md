@@ -1,8 +1,8 @@
-# FE-school-homework-1
+# FE-school-homework
 
 ## [Задание](https://docs.google.com/document/d/1KLy6PW9UejqnBmf2D3_8_emNyZ5Mu0ru/edit)
 
-## Комментарии
+## 📑 Комментарии
 1. Компоненты представлены классами: 
     - Dropdown
     - EmptyPage
@@ -13,7 +13,34 @@
 2. EventListeners - обработчики событий назначены на конкретные DOM элементы, один глобальный обработчик в src/index.js - закрывает выпадающие меню, если совершается клик не на dropdown или выпадающее меню.
 3. Tooltip - вспывает над элементом, когда указан дата атрибут [data-tooltip = "tooltip content"] и элемент скрывается ellipsis. Tooltip content - отображается в теле подсказки.
 
-## Описание
+## 🛠 Команды:
+
+Initially install the packages:
+```bash
+npm i
+```
+
+Start app:
+```bash
+npm run start
+```
+
+Build:
+```bash
+npm run build
+```
+
+Build (dev mode):
+```bash
+npm run build-dev
+```
+
+Webpack watch:
+```bash
+npm run watch
+```
+
+## 📖 Описание
 
 ### [Dropdown компонент](/src/components/dropdown)
 <p align="center">
