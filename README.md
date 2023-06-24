@@ -16,6 +16,10 @@
 ## Описание
 
 ### [Dropdown компонент](/components/drodown)
+<p align="center">
+  <img height="200px" src="https://github.com/safym/FE-school-homework-1/assets/99616798/4133f924-bf50-4389-a431-66ee2042b695">
+  <img height="200px" src="https://github.com/safym/FE-school-homework-1/assets/99616798/f9fdd0e6-8baf-4ad1-8351-437f7996cf30">
+</p>
 
 
 ### [Empty-page компонент](/components/empty-page)
@@ -36,5 +40,13 @@
 - Адаптивная верстка
 
 ### [Tooltip компонент](/components/drodown)
+
+<p align="center">
+  <img height="200px" src="https://github.com/safym/FE-school-homework-1/assets/99616798/a3655786-7e8f-4055-bff4-5e8bd922d124">
+  <img height="200px" src="https://github.com/safym/FE-school-homework-1/assets/99616798/400265b5-e23a-4fc3-a68b-e2e8047d312c">
+</p>
+
+
+
 
 
