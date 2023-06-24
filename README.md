@@ -22,24 +22,24 @@
 </p>
 
 
-### [Empty-page компонент](/components/empty-page)
+### [Empty-page компонент](/src/components/empty-page)
 ![image](https://github.com/safym/FE-school-homework-1/assets/99616798/d9d0de44-1445-4f5d-8a14-441b34f98065)
 - Адаптивная верстка
 
-### [Navigation компонент](/components/navigation)
+### [Navigation компонент](/src/components/navigation)
 ![image](https://github.com/safym/FE-school-homework-1/assets/99616798/9147cc1b-1db7-42ad-b89a-2f8e7ef98b2f)
 
-## [Task-item компонент](/components/task-item)
+## [Task-item компонент](/src/components/task-item)
 ![image](https://github.com/safym/FE-school-homework-1/assets/99616798/e9001870-f1dd-4417-bdc3-1990c77e722b)
 - Описание, id, подписи о создании и редактировании - ellipsis при переполнении
 - Адаптивная верстка
 
-### [Project-item компонент](/components/project-item)
+### [Project-item компонент](/src/components/project-item)
 ![image](https://github.com/safym/FE-school-homework-1/assets/99616798/bb35231d-68f1-41a1-9375-0119bc67f6b7)
 - Описание, id, подписи о создании и редактировании - ellipsis при переполнении
 - Адаптивная верстка
 
-### [Tooltip компонент](/components/drodown)
+### [Tooltip компонент](/src/components/drodown)
 
 <p align="center">
   <img height="200px" src="https://github.com/safym/FE-school-homework-1/assets/99616798/a3655786-7e8f-4055-bff4-5e8bd922d124">
