@@ -18,6 +18,7 @@ import { TaskItem } from "./components/task-item/index.js";
 // import data for components
 import { PROJECT_DATA, TASK_DATA, EMPTY_PAGE_DATA } from "./data.js";
 
+// Adding components to the app
 const app = document.getElementById("app");
 
 const taskContainer = document.createElement("div");
@@ -35,6 +36,7 @@ taskContainer.append(emptyPage.element);
 app.append(navigation.element);
 app.append(taskContainer);
 
+// Global event listener for closing drop-down menus
 document.addEventListener("click", (event) => {
   const closestButton = event.target.closest('[data-dropdown="button"]');
   const closestList = event.target.closest('[data-dropdown="list"]');
