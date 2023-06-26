@@ -17,6 +17,7 @@ import { TaskItem } from "./components/task-item/index.js";
 
 // import data for components
 import { PROJECT_DATA, TASK_DATA, EMPTY_PAGE_DATA } from "./data.js";
+import { ApiPage } from "./components/api-page";
 
 // Adding components to the app
 const app = document.getElementById("app");
@@ -25,6 +26,7 @@ const taskContainer = document.createElement("div");
 taskContainer.id = "container";
 
 const navigation = new Navigation();
+const apiPage = new ApiPage('krivopalova.m', 'jc63fk')
 const projectItem = new ProjectItem(PROJECT_DATA);
 const taskItem = new TaskItem(TASK_DATA);
 const emptyPage = new EmptyPage(EMPTY_PAGE_DATA);
@@ -34,7 +36,8 @@ taskContainer.append(taskItem.element);
 taskContainer.append(emptyPage.element);
 
 app.append(navigation.element);
-app.append(taskContainer);
+app.append(apiPage.element)
+// app.append(taskContainer);
 
 // Global event listener for closing drop-down menus
 document.addEventListener("click", (event) => {
