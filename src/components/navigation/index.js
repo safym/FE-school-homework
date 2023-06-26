@@ -13,8 +13,26 @@ export class Navigation {
   ];
   menu;
 
+  activeNavLink;
+
+  onClick = (event) => {
+    const element = event.target.closest("[data-navlink]");
+
+    if (element) {
+      const navLinkName = element.dataset.navlink;
+
+      if (navLinkName !== this.activeNavLink) {
+        this.activeNavLink = navLinkName;
+
+        this.inactivateNavlinks();
+        this.activateNavlink(element);
+      }
+    }
+  };
+
   constructor() {
-    this.buttonId = `${MENU_BUTTON_ID}-user`
+    this.buttonId = `${MENU_BUTTON_ID}-user`;
+    this.activeNavlink = null;
     this.render();
 
     this.initListeners();
@@ -46,15 +64,15 @@ export class Navigation {
       <nav class="header__nav">
         <ul class="header__list">
           <li class="header__list-item">
-            <a class="header__button button button__size_large button__nav button__nav_active" href="#">Проекты</a>
+            <a data-navlink="projects" class="header__button button button__size_large button__nav" href="#">Проекты</a>
           </li>
           <li class="header__list-item">
-            <a class="header__button button button__size_large button__nav" href="#"
+            <a data-navlink="tasks" class="header__button button button__size_large button__nav" href="#"
               >Задачи</a
             >
           </li>
           <li class="header__list-item">
-            <a class="header__button button button__size_large button__nav" href="#"
+            <a data-navlink="users" class="header__button button button__size_large button__nav" href="#"
               >Пользователи</a
             >
           </li>
@@ -78,8 +96,23 @@ export class Navigation {
     `;
   }
 
+  activateNavlink(element) {
+    element.classList.add("button__nav_active");
+  }
+
+  inactivateNavlinks() {
+    const navlinks = this.element.querySelectorAll(["[data-navlink]"]);
+
+    if (!navlinks) return;
+
+    for (const item of navlinks) {
+      item.classList.remove("button__nav_active");
+    }
+  }
+
   initListeners() {
     this.dropdownButton.addEventListener("click", this.menu.onClick);
+    this.element.addEventListener("click", this.onClick);
   }
 
   remove() {
