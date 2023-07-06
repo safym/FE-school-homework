@@ -11,6 +11,12 @@ module.exports = {
     clean: true,
     filename: "index.js",
   },
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+      assets: path.resolve(__dirname, "src", "assets"),
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
