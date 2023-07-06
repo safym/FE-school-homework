@@ -4,6 +4,11 @@ const NEW_PROJECT_DATA = {
   code: "12345",
 };
 
+const projectData = {
+  name: "name123",
+  code: "code123",
+};
+
 export class ApiPage {
   element;
 
@@ -96,7 +101,7 @@ export class ApiPage {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("(Fetch) Проект успешно создан", data);
+        this.showResult("(Fetch) Проект успешно создан:", data);
       })
       .catch((error) => {
         console.log("(Fetch) Ошибка при выполнении запроса:", error);
@@ -105,52 +110,28 @@ export class ApiPage {
 
   createProjectXML(projectBody) {
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", this.baseUrl + "/projects");
-    xhr.setRequestHeader("Content-Type", "application/xml");
+    xhr.open("POST", `${this.baseUrl}/projects`);
+    xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Authorization", `Bearer ${this.token}`);
-
-    xhr.onload = function () {
-      if (xhr.status === 201) {
-        const response = xhr.responseText;
-        // Обработка ответа после создания проекта
-        console.log(response);
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        this.showResult("(XML) Проект успешно создан:", JSON.parse(xhr.responseText));
       } else {
-        // Обработка ошибок
-        console.error("Ошибка при создании проекта");
+        console.log("(XML) Ошибка при выполнении запроса:", xhr.status);
       }
     };
-
-    const xmlRequestBody = this.buildXMLRequest(projectBody);
-    xhr.send(xmlRequestBody);
+    xhr.onerror = () => {
+      console.error("(XML) Ошибка при выполнении запроса:", xhr.statusText);
+    };
+    xhr.send(JSON.stringify(projectBody));
   }
 
-  buildXMLRequest(data) {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(
-      "<project></project>",
-      "application/xml"
-    );
-    const projectElement = xmlDoc.getElementsByTagName("project")[0];
-
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const element = xmlDoc.createElement(key);
-        element.textContent = data[key];
-        projectElement.appendChild(element);
-      }
-    }
-
-    return xmlDoc;
+  showResult(textMessage, resultData) {
+    console.log(`%c${textMessage}`, "color: #bada55", resultData);
   }
 
-  buildXMLRequest(data) {
-    const xml =
-      '<?xml version="1.0" encoding="UTF-8"?>' +
-      "<project>" +
-      `<name>${data.name}</name>` +
-      `<description>${data.description}</description>` +
-      "</project>";
-    return xml;
+  showError(textMessage, errorData) {
+    console.error(`${textMessage}`, errorData);
   }
 
   initListeners() {
