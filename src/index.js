@@ -26,19 +26,19 @@ const renderApp = () => {
   const taskContainer = document.createElement("div");
   taskContainer.id = "container";
 
-const navigation = new Navigation();
-const apiPage = new ApiPage('krivopalova.m', 'jc63fk')
-const projectItem = new ProjectItem(PROJECT_DATA);
-const taskItem = new TaskItem(TASK_DATA);
-const emptyPage = new EmptyPage(EMPTY_PAGE_DATA);
+  const navigation = new Navigation();
+  const apiPage = new ApiPage("krivopalova.m", "jc63fk");
+  const projectItem = new ProjectItem(PROJECT_DATA);
+  const taskItem = new TaskItem(TASK_DATA);
+  const emptyPage = new EmptyPage(EMPTY_PAGE_DATA);
 
   taskContainer.append(projectItem.element);
   taskContainer.append(taskItem.element);
   taskContainer.append(emptyPage.element);
 
-app.append(navigation.element);
-app.append(apiPage.element)
-// app.append(taskContainer);
+  app.append(navigation.element);
+  app.append(apiPage.element);
+  // app.append(taskContainer);
 
   // Global event listener for closing drop-down menus
   document.addEventListener("click", (event) => {
