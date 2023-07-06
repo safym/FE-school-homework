@@ -1,4 +1,4 @@
-import { Item } from "../item";
+import { Item } from "src/components/item";
 
 const MENU_BUTTON_ID = "project-button";
 

@@ -1,5 +1,5 @@
-import { Dropdown } from "../dropdown";
-import { Tooltip } from "../tooltip";
+import { Dropdown } from "src/components/dropdown";
+import { Tooltip } from "src/components/tooltip";
 
 export class Item {
   element;
@@ -102,7 +102,7 @@ export class Item {
     return userImg
       ? `<img
         class="item-card__image"
-        src="/assets/images/user.png"
+        src="assets/images/user.png"
         alt="user image"
       />`
       : "";

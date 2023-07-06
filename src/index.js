@@ -1,22 +1,22 @@
 // import main index.html for webpack
-import "./index.html";
+import "src/index.html";
 
 // import main style.scss for webpck
-import "./style.scss";
+import "src/style.scss";
 
 // import images for webpack
-import "./assets/images/user.png";
+import "src/assets/images/user.png";
 
 // import components
-import "./components/dropdown/index.js";
-import "./components/tooltip/index.js";
-import { EmptyPage } from "./components/empty-page/index.js";
-import { Navigation } from "./components/navigation/index.js";
-import { ProjectItem } from "./components/project-item/index.js";
-import { TaskItem } from "./components/task-item/index.js";
+import "src/components/dropdown/index.js";
+import "src/components/tooltip/index.js";
+import { EmptyPage } from "src/components/empty-page/index.js";
+import { Navigation } from "src/components/navigation/index.js";
+import { ProjectItem } from "src/components/project-item/index.js";
+import { TaskItem } from "src/components/task-item/index.js";
 
 // import data for components
-import { PROJECT_DATA, TASK_DATA, EMPTY_PAGE_DATA } from "./data.js";
+import { PROJECT_DATA, TASK_DATA, EMPTY_PAGE_DATA } from "src/data.js";
 
 // Adding components to the app
 const renderApp = () => {

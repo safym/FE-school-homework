@@ -1,4 +1,4 @@
-import { Dropdown } from "../dropdown";
+import { Dropdown } from "src/components/dropdown";
 
 const MENU_BUTTON_ID = "nav-button";
 
@@ -80,7 +80,7 @@ export class Navigation {
             <a id="${this.buttonId}" data-dropdown="button" class="header__user-button button button__size_large button__dropdown dropdown" href="#">
               <img
                 class="button__image"
-                src="/assets/images/user.png"
+                src="assets/images/user.png"
                 alt="user image"
               />
               <div class="button__icon-container">
